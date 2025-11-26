@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import lecturerRoutes from "./routes/lecturerRoutes.js";
+import issueRoutes from "./routes/issueRoutes.js";
 import cors from "cors";
 
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json()); // parse JSON bodies
 app.use("/api/students", studentRoutes);
 app.use("/api/lecturers", lecturerRoutes);
+app.use("/api/issues", issueRoutes);
 
 app.get("/", (req, res) => {
   res.send("Congratulations! API is running and connected to MongoDB...");
